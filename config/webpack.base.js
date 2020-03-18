@@ -2,8 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const base_path = path.resolve(__dirname, '..');
-const entry_path = path.resolve(__dirname, '../packages/index.ts');
-const output_path = path.resolve(__dirname, '../dist');
+const entry_path = path.resolve(base_path, 'packages/index.ts');
+const output_path = path.resolve(base_path, 'dist');
 
 module.exports = {
   mode: 'production',
@@ -30,7 +30,10 @@ module.exports = {
       ],
     }, {
       test: /\.svg/,
-      use: ['file-loader']
+      loader: 'file-loader',
+      options: {
+        outputPath: 'img/svg'
+      }
     }]
   },
   resolve: {

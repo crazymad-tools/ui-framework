@@ -11,7 +11,7 @@ const Wave: React.FC<WaveProps> = props => {
     let event: any = window.event;
     let size = Math.max(parent.clientHeight, parent.clientWidth) * 2.5;
     let dom = document.createElement("div");
-    
+
     let left = event.offsetX;
     let top = event.offsetY;
     let target = event.target;
@@ -38,18 +38,13 @@ const Wave: React.FC<WaveProps> = props => {
   function clone(child: any, idx: number) {
     let ref = React.createRef();
     return React.cloneElement(child, {
-      onClick: e => {
+      ...child.props,
+      onClick: (e: any) => {
         // 代理child props中的onClick事件
         child.props.onClick && child.props.onClick(e);
         addWave(ref);
       },
-      style: Object.assign(
-        {
-          position: "relative",
-          overflow: "hidden"
-        },
-        child.props.style || {}
-      ),
+      style: { ...child.props.style, position: "relative", overflow: "hidden" },
       ref: ref
     });
   }

@@ -75,10 +75,25 @@ const App = () => {
         </span>
       </Wave>
 
-      <DropPanel style={{ width: "300px" }}>
-        <DropPanelHeader>折叠面板标题</DropPanelHeader>
-        <DropPanelContent>折叠面板内容</DropPanelContent>
-      </DropPanel>
+      <DropPanel.DropPanelGroup>
+        <DropPanel style={{ width: "300px" }}>
+          <DropPanelHeader>折叠面板标题A</DropPanelHeader>
+          <DropPanelContent>
+            <ul>
+              <li>A</li>
+              <li>B</li>
+              <li>C</li>
+              <li>D</li>
+            </ul>
+          </DropPanelContent>
+        </DropPanel>
+        <DropPanel style={{ width: "300px" }}>
+          <DropPanelHeader>折叠面板标题B</DropPanelHeader>
+          <DropPanelContent>
+            <p>啦啦啦啦</p>
+          </DropPanelContent>
+        </DropPanel>
+      </DropPanel.DropPanelGroup>
     </div>
   );
 };
