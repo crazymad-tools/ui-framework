@@ -20,7 +20,7 @@ const Button: IButton<Props> = props => {
   function click(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     props.onClick && props.onClick(e);
   }
-
+  
   return (
     <Wave>
       <button

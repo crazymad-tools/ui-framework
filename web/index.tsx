@@ -94,6 +94,13 @@ const App = () => {
           </DropPanelContent>
         </DropPanel>
       </DropPanel.DropPanelGroup>
+
+      <DropPanel style={{ width: "400px", marginTop: "20px" }}>
+        <DropPanelHeader>单个drop panel</DropPanelHeader>
+        <DropPanelContent>
+          <div style={{ height: "100px" }}>单个drop panel的content</div>
+        </DropPanelContent>
+      </DropPanel>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import DropPanelGroup from "./DropPanelGroup";
 import "./index.scss";
 
 export interface DropPanelProps {
-  style: any;
+  style?: any;
 }
 
 type IDropPanel<P> = React.FC<P> & {
