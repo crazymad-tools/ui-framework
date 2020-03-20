@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import DropPanelHeader from "./DropPanelHeader";
 import DropPanelContent from "./DropPanelContent";
 import DropPanelGroup from "./DropPanelGroup";
@@ -6,6 +6,9 @@ import "./index.scss";
 
 export interface DropPanelProps {
   style?: any;
+  onChange?: Function;
+  drop?: boolean;
+  defaultDrop?: boolean;
 }
 
 type IDropPanel<P> = React.FC<P> & {
@@ -19,7 +22,20 @@ const DropPanel: IDropPanel<DropPanelProps> = props => {
   const [maxHeight, setMaxHeight] = useState(42);
   const currentRef = useRef<any>(null);
 
+  useEffect(() => {
+    let drop = false;
+    if (props.defaultDrop) {
+      drop = props.defaultDrop;
+    }
+    setDrop(drop);
+  }, []);
+
+  useEffect(() => {
+    props.drop !== undefined && setDrop(props.drop);
+  }, [props.drop]);
+
   function toggle() {
+    props.onChange && props.onChange(!drop);
     setDrop(!drop);
     let content = currentRef.current.querySelector(".drop-panel-content");
     let header = currentRef.current.querySelector(".drop-panel-header");

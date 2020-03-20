@@ -28,7 +28,7 @@ const Wave: React.FC<WaveProps> = props => {
     dom.style.left = `${left}px`;
     dom.style.top = `${top}px`;
     dom.style.background = props.color || "rgba(0, 0, 0, 0.1)";
-
+    
     parent.appendChild(dom);
     setTimeout(() => {
       dom.remove();

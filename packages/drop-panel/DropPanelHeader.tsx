@@ -8,10 +8,10 @@ export interface DropPanelHeaderProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 const DropPanelHeader: React.FC<DropPanelHeaderProps> = props => {
-  useEffect(() => {
-    console.log(props.drop);
-  }, [props.drop]);
-
+  // useEffect(() => {
+  //   console.log(props.drop);
+  // }, [props.drop]);
+  
   return (
     <Wave>
       <div className="drop-panel-header" onClick={props.onClick}>

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Button from "../packages/button";
 import Wave from "../packages/wave";
 import DropPanel from "../packages/drop-panel";
+import Icon from "../packages/icon";
 
 import "./index.scss";
 
@@ -101,6 +102,8 @@ const App = () => {
           <div style={{ height: "100px" }}>单个drop panel的content</div>
         </DropPanelContent>
       </DropPanel>
+
+      <Icon type="right" />
     </div>
   );
 };
