@@ -1,0 +1,43 @@
+@keyframes drop-fade-in {
+  from {
+    margin-top: 15px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 5px;
+    opacity: 1;
+  }
+}
+@keyframes drop-fade-out {
+  from {
+    margin-top: 5px;
+    opacity: 1;
+  }
+  to {
+    margin-top: 15px;
+    opacity: 0;
+  }
+}
+
+[data-drop-fade=in] {
+  animation: drop-fade-in 0.3s;
+  animation-fill-mode: forwards;
+}
+[data-drop-fade=out] {
+  animation: drop-fade-out 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.drop-down-wrap {
+  display: inline-block;
+}
+.drop-down-content {
+  display: block;
+  width: max-content;
+  height: max-content;
+  box-shadow: 0 0 5px #ddd;
+  border-radius: 3px;
+  background: #efefef;
+  overflow: hidden;
+  outline: none;
+}

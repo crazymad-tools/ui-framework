@@ -1,7 +1,11 @@
 .button-group {
+  box-shadow: 6px 6px  10px #dcdcdc, -6px  -6px  10px #fff;
+  display: inline-block;
+  border-radius: 5px;
   .button {
     border-radius: 0;
     margin-right: 1px;
+    box-shadow: none;
   }
   .button:first-child {
     border-top-left-radius: 5px;
@@ -26,6 +30,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  box-shadow: 6px 6px  10px #dcdcdc, -6px  -6px  10px #fff;
 
   &.lg {
     height: 40px;
@@ -52,11 +57,14 @@
   }
 
   &.normal {
+    background: linear-gradient(135deg, white, #ededed);
+    border: 1px solid #eee;
   }
   &.primary {
-    background: #1890ff;
+    // background: #1890ff;
+    background: linear-gradient(135deg, #7ec0fd, #1890ff);
+    border: 1px solid #51abff;
     // border: 1px solid #1890ff;
-    border: none;
     color: white;
   }
 

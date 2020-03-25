@@ -34,7 +34,7 @@ const Wave: React.FC<WaveProps> = props => {
       dom.remove();
     }, 1500);
   }
-
+  
   function clone(child: any, idx: number) {
     let ref = React.createRef();
     return React.cloneElement(child, {

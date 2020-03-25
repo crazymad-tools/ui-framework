@@ -6,8 +6,11 @@ import "./index.scss";
 
 export interface DropPanelProps {
   style?: any;
+  // 状态变更回调
   onChange?: Function;
+  // 状态绑定
   drop?: boolean;
+  // 默认状态
   defaultDrop?: boolean;
 }
 
@@ -64,10 +67,15 @@ const DropPanel: IDropPanel<DropPanelProps> = props => {
     <div
       ref={currentRef}
       className="drop-panel"
-      style={{ ...props.style, height: `${drop ? maxHeight : 42}px` }}>
+      style={{ ...props.style, height: `${drop ? maxHeight : 42}px` }}
+    >
       {clone()}
     </div>
   );
+};
+
+DropPanel.defaultProps = {
+  defaultDrop: false
 };
 
 DropPanel.DropPanelHeader = DropPanelHeader;
